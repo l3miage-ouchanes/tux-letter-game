@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<!--
+    Document   : profil.xsd
+    Created on : October 04, 2022, 3:30 PM
+    Author     : OUCHANE Souleymen / DAMESSI Samuel
+    Description:
+        Schéma de profil
+-->
+
+<schema version="1.0"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tux="http://myGame/tux"
+        targetNamespace="http://myGame/tux"
+        elementFormDefault="qualified">
+
+<include schemaLocation="dico.xsd"/>
+
+<!-- Racine de type Profil -->
+<element name="profil" type="tux:Profil"/>
+    
+    <!-- Définition de type Complexe Profil -->
+    <complexType name="Profil">
+        <sequence>
+            <element name="nom" type="string"/>
+            <element name="avatar" type="string"/>
+            <element name="anniversaire" type="date"/>
+            <element name="parties" type="tux:Parties"/>
+        </sequence>
+    </complexType>
+    
+    <!-- Définition du type Complexe Parties -->
+    <complexType name="Parties">
+        <sequence>
+            <element name="partie" type="tux:Partie" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <!-- Définition du type Complexe Partie -->
+    <complexType name="Partie">
+        <sequence>
+            <element name="temps" type="double" minOccurs="0" maxOccurs="1"/>
+            <element name="mot" type="tux:MotProfil"/>
+        </sequence>
+        <attribute name="date" type="date"/>
+        <attribute name="trouvé" type="string" use="optional"/>
+    </complexType>
+    
+    <!-- Définition du type Complexe Mot avec une extension d'attribut niveau -->
+    <complexType name="MotProfil">
+        <simpleContent>
+            <extension base="tux:Mot">
+                <attribute name="niveau" type="tux:EnumNiv" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    
+</schema>

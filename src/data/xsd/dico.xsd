@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tux="http://myGame/tux"
+           targetNamespace="http://myGame/tux"
+           elementFormDefault="qualified">
+    
+    <!-- Racine dico de type tux:Dictionnaire du fichier dico.xml -->
+    <xs:element name="dico" type="tux:Dictionnaire"/>
+    
+    
+    <!-- Définition du type Complexe Dictionnaire composé :
+            - d'un niveaux (tux:Niveaux) -->
+    <xs:complexType name="Dictionnaire">
+        <xs:sequence>
+            <xs:element name="niveaux" type="tux:Niveaux" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <!-- Définition du type Complexe Niveaux composé :
+            - d'un niveau (tux:Niveau) -->
+    <xs:complexType name="Niveaux">
+        <xs:sequence>
+            <xs:element name="niveau" type="tux:Niveau" minOccurs="5" maxOccurs="5"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <!-- Définition du type Complexe Niveau composé :
+            - d'un ou plusieurs mots : mot (tux:Mot)
+         et d'un attribut :
+            - niv (tux:EnumNiv) (obligatoire)    -->
+    <xs:complexType name="Niveau">
+        <xs:sequence>
+            <xs:element name="mot" type="tux:Mot" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        
+        <xs:attribute name="niv" type="tux:EnumNiv" use="required"/>
+    </xs:complexType>
+
+    
+    <!-- Définition du type Simple EnumNiv
+            Restrictions integer :
+                - de 1 à 5 -->
+    <xs:simpleType name="EnumNiv">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value='1'/>
+            <xs:maxInclusive value='5'/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <!-- Définition du type Simple EnumNiv
+            Restrictions string :
+                - contient que des lettres ou un - -->
+    <xs:simpleType name="Mot">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Zéèêàïù\-])+"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

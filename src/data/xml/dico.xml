@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+
+<dico
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://myGame/tux'
+    xsi:schemaLocation='http://myGame/tux ../xsd/dico.xsd'>
+
+    <niveaux>
+        <niveau niv="1">
+            <mot>salut</mot>
+            <mot>rue</mot>
+            <mot>trou</mot>
+            <mot>toit</mot>
+        </niveau>
+        
+        <niveau niv="2">
+            <mot>langage</mot>
+            <mot>phare</mot>
+            <mot>effacer</mot>
+            <mot>mauvais</mot>
+            <mot>vagabond</mot>
+            <mot>alibi</mot>
+        </niveau>
+        
+        <niveau niv="3">
+            <mot>spaghetti</mot>
+            <mot>entretien</mot>
+            <mot>obstacle</mot>
+            <mot>dictateur</mot>
+            <mot>millionnaire</mot>
+            <mot>déshabiller</mot>
+            <mot>inattendu</mot>
+        </niveau>
+        
+        <niveau niv="4">
+            <mot>constitutionnellement</mot>
+            <mot>applaudissement</mot>
+        </niveau>
+        
+        <niveau niv="5">
+            <mot>arachibutyrophobie</mot>
+        </niveau>
+    </niveaux>
+    
+</dico>
+

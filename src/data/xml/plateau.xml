@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+
+<plateau>
+    <dimensions>
+        <height>100</height>
+        <width>100</width>
+        <depth>100</depth>
+    </dimensions>
+    
+    <mapping>
+        <textureBottom>textures/floor/grass2.png</textureBottom>
+        <textureEast>textures/skybox/interstellar/east.png</textureEast>
+        <textureWest>textures/skybox/interstellar/west.png</textureWest>
+        <textureNorth>textures/skybox/interstellar/north.png</textureNorth>
+    </mapping>
+    
+    <pion>une url</pion>
+</plateau>
+

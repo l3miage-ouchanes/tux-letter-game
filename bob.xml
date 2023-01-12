@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<profil xmlns="http://myGame/tux" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://myGame/tux ../xsd/profil.xsd">
+    <nom>bob</nom>
+    <avatar>bob.png</avatar>
+    <anniversaire>1971-09-22</anniversaire>
+    <parties/>
+</profil>
